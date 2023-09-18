@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grades Page</title>
+</head>
+<body>
+    <table width="100%">
+        <tr>
+            <td valign="top" width="10%">
+                <ul>
+                    <li><a href="/kanbas/account/accountNavigation/index.html">Account</a></li>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="/kanbas/courses/index.html">Courses</a></li>
+                    <li><a href="#">Calender</a></li>
+                    <li><a href="#">Inbox</a></li>
+                    <li><a href="#">History</a></li>
+                    <li><a href="#">Studio</a></li>
+                    <li><a href="#">Commons</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+            </td>
+            <td valign="top" width="15%">
+                <ul>
+                    <li><a href="/kanbas/courses/home/home.html">Home</a></li>
+                    <li><a href="#">Module</a></li>                        
+                    <li><a href="#">Piazza</a></li>
+                    <li><a href="#">Zoom Meetings</a></li>
+                    <li><a href="/kanbas/courses/assignments/index.html">Assignments</a></li>
+                    <li><a href="#">Quizzes</a></li>
+                    <li><a href="/kanbas/courses/grades/grades.html">Grades</a></li>
+                    <li><a href="#">People</a></li>
+                    <li><a href="#">Panopto Video</a></li>
+                    <li><a href="#">Discussion</a></li>
+                    <li><a href="#">Announcements</a></li>
+                    <li><a href="#">Pages</a></li>
+                    <li><a href="#">Files</a></li>
+                    <li><a href="#">Rubrics</a></li>
+                    <li><a href="#">Outcomes</a></li>
+                    <li><a href="#">Collaborations</a></li>
+                    <li><a href="#">Syllabus</a></li>
+                    <li><a href="/kanbas/courses/settings/course_details.html">Settings</a></li>
+                </ul>
+            </td>
+            <td valign="top">
+                <select id="select-one-option-1">
+                    <option value="GRADEBOOK">Gradebook</option>
+                </select>                         
+                <button type="button">Import</button>
+                <select id="select-one-option-2">
+                    <option value="EXPORT">Export</option>
+                </select>
+                <button type="button">Configure</button>
+
+                <label for="Student-Names"><h3>Student Names</h3></label>
+                <input type="text" placeholder="Search Students" id="Student-Names">
+
+                <label for="Assignment-Names"><h3>Assignment Names</h3></label>
+                <input type="text" placeholder="Search Assignments" id="Assignment-Names">
+
+                <br><br>
+                <button type="button">Apply Filter</button>
+                <br>
+                <table border="1">
+                    <tr><br>
+                        <th>
+                            Student Name
+                        </th>
+                        <th>
+                            A1 Regression Out of 100
+                        </th>
+                        <th>
+                            A2 Classification Out of 100
+                        </th>
+                        <th>
+                            A3 Neural Networks Out of 100 
+                        </th>
+                        <th>
+                            A4 Unsupervised Machine Learning Out of 100
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            Meet Patel
+                        </td>
+                        <td align="center">
+                            97
+                        </td>
+                        <td align="center">
+                            <input type="number" id="inp-1" placeholder="out of 100" value="89">
+                        </td>
+                        <td align="center">
+                            99
+                        </td>
+                        <td align="center">
+                            97
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Jake Paralta
+                        </td>
+                        <td align="center">
+                            88
+                        </td>
+                        <td align="center">
+                            77
+                        </td>
+                        <td align="center">
+                            100
+                        </td>
+                        <td align="center">
+                            <input type="number" id="inp-2" placeholder="out of 100" value="80">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Ted Mosby
+                        </td>
+                        <td align="center">
+                            90
+                        </td>
+                        <td align="center">
+                            80
+                        </td>
+                        <td align="center">
+                            <input type="number" id="inp-2" placeholder="out of 100" value="95">
+                        </td>
+                        <td align="center">
+                            67
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Amy Santiago
+                        </td>
+                        <td align="center">
+                            <input type="number" id="inp-2" placeholder="out of 100" value="97">
+                        </td>
+                        <td align="center">
+                            82
+                        </td>
+                        <td align="center">
+                            87
+                        </td>
+                        <td align="center">
+                            94
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
