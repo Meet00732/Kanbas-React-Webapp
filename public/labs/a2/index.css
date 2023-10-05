@@ -30,6 +30,21 @@ p#id-selector-2 {
     color: blue;
 }
 
+.wd-flex-row-container {
+   display: flex;
+   flex-direction: row;
+ }
+ 
+ 
+ .wd-flex-grow-1 {
+   flex-grow: 1;
+ }
+
+ .wd-width-75px {
+   width: 75px;
+ }
+ 
+
 .wd-fg-color-black { color: black; }
 .wd-fg-color-white { color: white; }
 .wd-fg-color-blue { color: #7070ff; }
