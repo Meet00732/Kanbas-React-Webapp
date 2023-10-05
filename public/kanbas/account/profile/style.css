@@ -1,0 +1,136 @@
+/* common */
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+
+.nav-link i {
+    font-size: 24px;
+    color: white;
+    display: block;
+}
+
+
+.nav-link.active {
+    background-color: white;
+    color: red !important;
+}
+
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: black;
+    color: white;
+    width: 85px;
+    height: 100%;
+    padding: 0;
+}
+
+.sidebar-logo {
+    text-align: center;
+    padding: 0;
+}
+
+.nav-link {
+    color: white;
+    text-align: center;
+    padding: 5px 0;
+    margin: 5px 0;
+    font-size: 14px;
+    font-family: "Lato Extended", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-decoration: none;
+}
+
+a {
+    color: inherit !important;
+    text-decoration: none !important;
+}
+
+.nav-link a:hover {
+    color: inherit;
+}
+
+.acti {
+    color: #b6b7b9 !important;
+}
+
+.content-wrapper {
+    margin-left: 95px;
+    padding-top: 20px;
+}
+
+.above-section {
+    display: flex;
+    align-items: center;
+}
+
+.menubar-icon {
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.profile-name-edit {
+    font-size: 18px;
+    color: black;
+    margin-left: 25px;
+}
+
+/* specific to second columns */
+
+.left-navigation {
+    width: 125px;
+    background-color: white;
+    padding: 0;
+}
+
+.left-navigation ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.left-navigation ul li {
+    margin: 0;
+    padding-top: 15px;
+}
+
+.left-navigation ul li a {
+    text-decoration: none;
+    font-size: 16px;
+    padding-left: 10px;
+    display: block;
+}
+
+.left-navigation ul li.selected a {
+    color: black !important;
+    border-left: 2px solid black;
+    padding-left: 8px;
+}
+
+/* for right content */
+
+.set-content-right {
+    margin-left: 100px;
+}
+
+/* for edit profile*/
+.set-editscreen {
+    width: 700px;
+}
+
+@media (max-width: 1300px) {
+    .left-navigation {
+        display: none;
+    }
+
+    .right-content {
+        margin-left: 0;
+    }
+
+    .sidebar {
+        display: none;
+    }
+}
