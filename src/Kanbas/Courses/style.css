@@ -8,7 +8,6 @@ body {
     color: red;
 }
 
-
 .nav-link i {
     font-size: 24px;
     color: white;
@@ -16,11 +15,23 @@ body {
 }
 
 
+.right-content {
+    margin-left: 100px;
+}
+
 .nav-link.active {
     background-color: white;
     color: red !important;
 }
 
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 95;
+    width: 100%;
+    background-color: white;
+    z-index: 1000; 
+}
 
 .sidebar {
     position: fixed;
@@ -57,6 +68,14 @@ a {
     color: inherit;
 }
 
+.breadcrumb-item+.breadcrumb-item::before {
+    content: "/";
+}
+
+.breadcrumb-item:last-of-type::before {
+    content: ">";
+}
+
 .act {
     color: #b6b7b9 !important;
 }
@@ -70,14 +89,24 @@ a {
     padding-top: 20px;
 }
 
+.margin-right-5 {
+    margin-right: 5px;
+}
+
 .top-section {
     display: flex;
     align-items: center;
 }
 
+.margin-right-100 {
+    margin-right: 100px;
+ }
+
+.margin-top-10 {
+    margin-top: 10px;
+}
 .menu-icon {
-    color: red;
-    font-size: 24px;
+    font-size: 20px;
     cursor: pointer;
     margin-right: 10px;
 }
@@ -102,6 +131,14 @@ a {
     padding: 0;
 }
 
+.flex-container {
+    display: flex;
+}
+
+.route-content {
+    flex-grow: 1;
+}
+
 .left-navigation ul li {
     margin: 0;
     padding-top: 15px;
@@ -115,7 +152,7 @@ a {
     display: block;
 }
 
-.left-navigation ul li.selected {
+.left-navigation ul li .selected {
     color: black !important;
     border-left: 2px solid black;
     padding-left: 8px;
