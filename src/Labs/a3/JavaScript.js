@@ -8,7 +8,6 @@ import ArrowFunctions from "./ArrowFunctions";
 import ParaenthesisAndParameters from "./FunctionParenthesisAndParameters";
 import ImpliedReturn from "./ImpliedReturn";
 import WorkingWithArrays from "./WorkingWithArrays";
-import JSonStringify from "./JsonStringify";
 import TemplateLiterals from "./TemplateLiterals";
 import House from "./House";
 import Spread from "./Spread";
@@ -30,7 +29,6 @@ function JavaScript() {
             <ImpliedReturn/>
             <ParaenthesisAndParameters/>
             <WorkingWithArrays/>
-            <JSonStringify/>
             <TemplateLiterals/>
             <House/>
             <Spread/>
