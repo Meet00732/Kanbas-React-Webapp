@@ -46,10 +46,6 @@ a {
     text-decoration: none !important;
 }
 
-.nav-link a:hover {
-    color: inherit;
-}
-
 .acti {
     color: #b6b7b9 !important;
 }
@@ -187,6 +183,28 @@ a {
 .button-group-1 button {
     width: 100px;
     font-size: revert;
+}
+
+.addButton {
+    padding: 5px 15px;
+    margin-left: 5px;
+    border: none;
+    background-color: #42a54d;
+    color: #FFF;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+}
+
+.updateButton {
+    padding: 5px 15px;
+    margin-left: 5px;
+    border: none;
+    background-color: #bf2f36;
+    color: #FFF;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
 }
 
 .button-group-2 {
@@ -447,6 +465,19 @@ a {
 .specs-icon {
     cursor: pointer;
     font-size: 24px;
+}
+
+.redux-input {
+    display: 'flex';
+    flex-direction: 'column';
+    width: '100px';
+    margin: 10px;
+}
+
+.redux-textarea {
+    border-radius: '5px';
+    border: '1px solid #ccc';
+    margin: 10px;
 }
 
 .padding-left-30 {

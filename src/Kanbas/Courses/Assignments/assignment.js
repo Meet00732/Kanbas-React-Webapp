@@ -1,15 +1,51 @@
-import React from "react";
-import { Link, useParams } from "react-router-dom";
-import db from "../../Databases";
-import './style.css';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faClipboard, faGripVertical, faCheckCircle, faEllipsisV } from "@fortawesome/free-solid-svg-icons";
+import React, { useState } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faCheckCircle,
+  faPlus,
+  faEllipsisV,
+  faClipboard,
+} from '@fortawesome/free-solid-svg-icons';
+
+
+import {
+  deleteAssignment
+} from './assignmentsReducer';
+
 
 function Assignments() {
   const { courseId } = useParams();
-
-  const assignments = db.assignment;
+  const navigate = useNavigate();
+  const assignments = useSelector((state) => state.assignmentsReducer.assignments);
   const courseAssignments = assignments.filter((assignment) => assignment.course === courseId);
+  const dispatch = useDispatch();
+  const [showConfirmationDialog, setShowConfirmationDialog] = useState(false);
+  const [assignmentToDelete, setAssignmentToDelete] = useState(null);
+
+  const confirmDelete = () => {
+      dispatch(deleteAssignment(assignmentToDelete))
+      setShowConfirmationDialog(false);
+  };
+
+  const cancelDelete = () => {
+      setShowConfirmationDialog(false);
+  };
+
+  const setdeleteAssignment = (event, assignmentId) => {
+    event.preventDefault(); 
+    event.stopPropagation();
+    setAssignmentToDelete(assignmentId);
+    setShowConfirmationDialog(true);
+};
+
+  const createNewAssignment = () => {
+      navigate(`/Kanbas/Courses/${courseId}/Assignments/new`);
+  };
+
+  
 
   return (
     <div style={{marginLeft:5,width:1100}}>
@@ -22,7 +58,7 @@ function Assignments() {
           <button type="button" className="btn btn-light float-right">
             <FontAwesomeIcon icon={faEllipsisV} />
           </button>
-          <button type="button" className="btn btn-danger float-right">+Assignment</button>
+          <button type="button" className="btn btn-danger float-right" onClick={createNewAssignment}>+Assignment</button>
           <button type="button" className="btn btn-light float-right">+Group</button>    
           <div className="dropdown-menu ">
             <button className="dropdown-item" type="button" id="edit-assignment-dates">Edit Assignment Dates</button>
@@ -65,13 +101,20 @@ function Assignments() {
                 </button>
               </div>
               <div>
-                <a href="edit.html" className="set-font-style">{assignment._id} - {assignment.title}</a><br />
+                <Link to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`} className="set-font-style">
+                                {assignment._id} - {assignment.title}
+                </Link>
+                <br />
                 <p className="assignment-text">
-                  week 0 - SETUP - Week starting Monday September 5th (09/05/2022) Module | <br />
-                  <b>Due</b> September 18, 2022 at 11:59pm | 100 pts
+                    <span >{assignment.description}</span> | 100 pts
                 </p>
               </div>
               <div className="margin-bottom-20 margin-left" style={{ paddingRight: 33 }}>
+                <button style={{ marginRight: "10px" }}
+                                className="btn btn-danger deleteButton"
+                                onClick={(event) => setdeleteAssignment(event, assignment._id)}>
+                                Delete
+                </button>
                 <button type="button" className="button-setup" disabled>
                   <FontAwesomeIcon icon={faCheckCircle} className="correct-symbol" />
                 </button>
@@ -83,6 +126,14 @@ function Assignments() {
             <hr style={{margin: "0rem"}}/>
           </Link>
         ))}
+        {showConfirmationDialog && (
+                <div className="confirmation-dialog">
+                    <p>Are you sure you want to delete this assignment?</p>
+                    <button className="btn btn-success" onClick={confirmDelete}>Yes</button>
+                    <button className="btn btn-danger deleteButton" onClick={cancelDelete}>No</button>
+                    <button className="btn btn-light deleteButton" onClick={cancelDelete}>Cancel</button>
+                </div>
+            )}
       </div>
       </div>
     </div>

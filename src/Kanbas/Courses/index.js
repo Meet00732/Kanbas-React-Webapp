@@ -3,20 +3,19 @@ import { useParams, useLocation, Routes, Route, Navigate } from "react-router-do
 import CourseNavigation from './CourseNavigation';
 import { faBars, faGlasses } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Databases from "../Databases";
 import Modules from './Modules';
 import Home from './Home';
 import Assignments from './Assignments/assignment';
 import AssignmentEditor from './Assignments/AssignmentEditor';
 import './style.css';
 
-function Courses() {
+function Courses({ courses }) {
     const { courseId } = useParams();
     const location = useLocation();
     const loc = location.pathname.split("/");
     const currentBreadcrumb = decodeURIComponent(loc.pop());
 
-    const course = Databases.courses.find((c) => c._id === courseId);
+    const course = courses.find((c) => c._id === courseId);
 
     return (
         // <div className='contianer-fluid'>

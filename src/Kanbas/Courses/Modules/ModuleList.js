@@ -1,13 +1,55 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import db from "../../Databases";
+// import db from "../../Databases";
 import './style.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle, faPlus, faEllipsisV, faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import { useSelector, useDispatch } from "react-redux";
+import {
+  addModule,
+  deleteModule,
+  updateModule,
+  setModule,
+} from "./modulesReducer";
 
 function ModuleList() {
   const { courseId } = useParams();
-  const modules = db.modules;
+  // const [modules, setModules] = useState(db.modules);
+
+  // const [module, setModule] = useState({
+  //   name: "New Module",
+  //   description: "New Description",
+  //   course: courseId,
+  // });
+
+  // const addModule = (module) => {
+  //   setModules([
+  //     { ...module, _id: new Date().getTime().toString() },
+  //       ...modules,
+  //   ]);
+  // };
+
+  // const deleteModule = (moduleId) => {
+  //   setModules(modules.filter(
+  //     (module) => module._id !== moduleId));
+  // };
+
+  // const updateModule = () => {
+  //   setModules(
+  //     modules.map((m) => {
+  //       if (m._id === module._id) {
+  //         return module;
+  //       } else {
+  //         return m;
+  //       }
+  //     })
+  //   );
+  // }
+
+  const modules = useSelector((state) => state.modulesReducer.modules);
+  const module = useSelector((state) => state.modulesReducer.module);
+  const dispatch = useDispatch();
+
 
   return (
         <div className="col-md-9 padding-left-30">
@@ -32,11 +74,35 @@ function ModuleList() {
           <hr />
             <div className="mb3">
                 <ul className="list-group module-groups">
+                <li className="list-group-item">
+                <div>
+                  <input className="form-control redux-input"
+                    type="text" 
+                    placeholder="New Module" 
+                    value={module.name}
+                    onChange={(e) => dispatch(setModule({ ...module, name: e.target.value }))}
+
+                  />
+                  <textarea className="form-control redux-textarea"
+                    placeholder="New Description" 
+                    onChange={(e) => dispatch(setModule({ ...module, description: e.target.value }))
+                  }
+                  />
+                  <div style={{marginLeft: 10}}>
+                    <button className="btn addButton"
+                      onClick={() => dispatch(addModule({ ...module, course: courseId }))}>Add</button>
+                    <button className="btn updateButton"
+                      onClick={() => dispatch(updateModule(module))}>Update</button>
+                  </div>
+                </div>
+
+                </li>
+
                 {
                     modules.filter((module) => module.course === courseId)
                         .map((module, index) => (
                             <div>
-                                <li className="list-group-item list-group-item-secondary">
+                                <li key={index} className="list-group-item list-group-item-secondary">
                                     <FontAwesomeIcon icon={faEllipsisV} className="ellipse-color-new" />
                                     <FontAwesomeIcon icon={faEllipsisV} className="ellipse-color-new icon-spacing2" />
                                     <FontAwesomeIcon icon={faCaretDown} className="icon-spacing2 margin-left-right" />
@@ -50,6 +116,15 @@ function ModuleList() {
                                         <FontAwesomeIcon icon={faPlus} className="icon-spacing ellipse-color-new margin-left-right" />
                                         <FontAwesomeIcon icon={faEllipsisV} className="ellipse-color-new margin-left-right" />
                                     </div>
+                                    <button className="btn btn-primary"
+                                      onClick={() => dispatch(setModule(module))}>
+                                      Edit
+                                    </button>
+
+                                    <button className="btn btn-danger"
+                                      onClick={() => dispatch(deleteModule(module._id))}>
+                                      Delete
+                                    </button>
                                 </li>
                                 <li class="list-group-item left-border-line">
                                     <FontAwesomeIcon icon={faEllipsisV} className="ellipse-color-new" />

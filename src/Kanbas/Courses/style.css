@@ -64,9 +64,6 @@ a {
     text-decoration: none !important;
 }
 
-.nav-link a:hover {
-    color: inherit;
-}
 
 .breadcrumb-item+.breadcrumb-item::before {
     content: "/";

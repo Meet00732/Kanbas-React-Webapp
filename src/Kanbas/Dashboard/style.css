@@ -183,7 +183,7 @@ body {
     border-radius: 0 0 5px 5px;
     color: #6A6F72;
     font-size: 14px;
-    height: 120px;
+    height: 150px;
 }
 
 
@@ -229,6 +229,45 @@ body {
     overflow: hidden;
     color:#b6b7b9;   
 }
+
+
+.new-course, .course-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.new-course input, .course-item span {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.addButton {
+    padding: 5px 15px;
+    margin-left: 5px;
+    border: none;
+    background-color: #42a54d;
+    color: #FFF;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+}
+
+.updateButton {
+    padding: 5px 15px;
+    margin-left: 5px;
+    border: none;
+    background-color: #bf2f36;
+    color: #FFF;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+}
+
+/* button:hover {
+    background-color: #42a54d;
+} */
 
 
 .course-term{
