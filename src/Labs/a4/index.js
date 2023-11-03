@@ -23,8 +23,6 @@ const Assignment4 = () => {
     return(
     <>
         <h1>Assignment 4</h1>
-        <ReduxExamples />
-        <Add a={1} b={2} />
         <ClickEvent />
         <PassingDataOnEvent />
         <PassingFunctions theFunction={sayHello} />
