@@ -1,10 +1,12 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import { faCheckCircle, faEllipsisV } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { addAssignment, updateAssignment } from '../assignmentsReducer'
 import { useDispatch, useSelector } from 'react-redux';
 import './style.css';
+import * as client from "../client";
+import { setAssignments } from '../assignmentsReducer';
 
 function AssignmentEditor() {
   const { assignmentId } = useParams();
@@ -14,6 +16,15 @@ function AssignmentEditor() {
     (assignment) => assignment._id === assignmentId);
   const { courseId } = useParams();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (assignmentId !== "new") {
+      client.findAssignmentForCourse(assignmentId).then(data => {
+        setAssignments(data);
+      });
+    }
+  }, [assignmentId]);
+
   const handleSave = () => {
     const newAssignment = {
       title: assignmentName,
@@ -23,10 +34,12 @@ function AssignmentEditor() {
       startDate: assignStart,
       endDate: assignEnd,
     };
+    // console.log(assignmentId);
+    // console.log(newAssignment);
     if (assignmentId === "new") {
-      dispatch(addAssignment(newAssignment));
+      client.createAssignment(courseId, newAssignment);
     } else {
-      dispatch(updateAssignment({ ...newAssignment, _id: assignmentId }));
+      client.updateAssignment({ ...newAssignment, _id: assignmentId });
     }
     navigate(`/Kanbas/Courses/${courseId}/Assignments`);
   };

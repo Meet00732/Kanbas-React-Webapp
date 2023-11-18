@@ -8,14 +8,30 @@ import Home from './Home';
 import Assignments from './Assignments/assignment';
 import AssignmentEditor from './Assignments/AssignmentEditor';
 import './style.css';
+import { useState, useEffect } from "react";
+import axios from "axios";
 
-function Courses({ courses }) {
+function Courses() {
+    
+    const URL = "http://localhost:4000/api/courses";
     const { courseId } = useParams();
+    const [course, setCourse] = useState({});
+    const findCourseById = async (courseId) => {
+        const response = await axios.get(
+        `${URL}/${courseId}`
+        );
+        setCourse(response.data);
+    };
+
     const location = useLocation();
     const loc = location.pathname.split("/");
     const currentBreadcrumb = decodeURIComponent(loc.pop());
 
-    const course = courses.find((c) => c._id === courseId);
+    // const course = courses.find((c) => c._id === courseId);
+    useEffect(() => {
+        findCourseById(courseId);
+      }, [courseId]);
+    
 
     return (
         // <div className='contianer-fluid'>

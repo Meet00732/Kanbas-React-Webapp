@@ -14,7 +14,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Dashboard from "../Dashboard/dashboard";
+
 
 const iconMap = {
     "fas fa-user-circle": faUserCircle,
