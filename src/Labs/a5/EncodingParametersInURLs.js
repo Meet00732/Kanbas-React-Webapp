@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 function EncodingParametersInURLs() {
-  const hostedServer = process.env.REACT_LAB_API;
-  const API_BASE = `${hostedServer}`;
+  const API_BASE = process.env.REACT_LAB_API;
+  // const  = `${hostedServer}`;
   const [a, setA] = useState(34);
   const [b, setB] = useState(23);
 
