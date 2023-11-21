@@ -3,7 +3,7 @@ import axios from "axios";
 
 function WorkingWithArrays() {
     const [errorMessage, setErrorMessage] = useState(null);
-    const hostedServer = process.env.REACT_APP_HOST_SERVER;
+    const hostedServer = process.env.REACT_APP_API_BASE;
     const API = `${hostedServer}/a5/todos`;
     const [todo, setTodo] = useState({
         id: 1,
