@@ -10,7 +10,7 @@ function WorkingWithObjects() {
         completed: false,
         score: 0,
       });
-      const hostedServer = process.env.REACT_LAB_API;
+      const hostedServer = process.env.REACT_APP_LAB_API;
       const URL = `${hostedServer}/a5/assignment`;
       
       const fetchAssignment = async () => {

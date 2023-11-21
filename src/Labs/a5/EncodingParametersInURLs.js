@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 function EncodingParametersInURLs() {
-  const API_BASE = process.env.REACT_LAB_API;
+  const API_BASE = process.env.REACT_APP_LAB_API;
   // const  = `${hostedServer}`;
   const [a, setA] = useState(34);
   const [b, setB] = useState(23);
@@ -41,7 +41,7 @@ function EncodingParametersInURLs() {
         className="form-control" type="number" value={b}/>
       <h3>Path Parameters</h3>
       <a
-        href={`${API_BASE}/add/${a}/${b}`}
+        href={`${API_BASE}/a5/add/${a}/${b}`}
         className="btn btn-primary">
         Add {a} + {b}
       </a>
