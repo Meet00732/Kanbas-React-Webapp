@@ -29,13 +29,13 @@ function WorkingWithObjects() {
     <div>
       <h3>Working With Objects</h3>
       <h4>Retrieving Objects</h4>
-      <a href={`${URL}/a5/assignment`}
+      <a href={`${URL}`}
          className="btn btn-primary me-2">
         Get Assignment
       </a>
       <h4>Retrieving Properties</h4>
       <a
-        href={`${URL}/a5/assignment/title`}
+        href={`${URL}/title`}
         className="btn btn-primary me-2">
         Get Title
       </a>
