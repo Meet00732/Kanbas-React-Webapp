@@ -4,12 +4,12 @@ import WorkingWithArrays from "./WorkingWithArrays";
 
 function Assignment5() {
   const hostedServer = process.env.REACT_LAB_API;
-  const API_BASE = `${hostedServer}/a5`;
+  const API_BASE = `${hostedServer}`;
     return (
       <div>
         <h1>Assignment 5</h1>
         <div className="list-group">
-          <a href={`${API_BASE}/welcome`}
+          <a href={`${API_BASE}/a5/welcome`}
              className="list-group-item">
             Welcome
           </a>
