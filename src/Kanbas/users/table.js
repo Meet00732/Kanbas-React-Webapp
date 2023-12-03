@@ -77,20 +77,20 @@ function UserTable() {
               <tr>
                 <td>
                     <Link to={`/project/account/${user._id}`}>
-                      <input type="text" className="form-control" value={user.username} placeholder="Username" onChange={(e) => setUser({ ...user, username: e.username.value })}/>
+                      <input type="text" className="form-control" value={user.username} placeholder="Username" onChange={(e) => setUser({ ...user, username: e.target.value })}/>
                     </Link> 
                 </td>
                 <td>
-                  <input type="password" className="form-control" value={user.password} placeholder="Password" onChange={(e) => setUser({ ...user, password: e.password.value })}/>
+                  <input type="password" className="form-control" value={user.password} placeholder="Password" onChange={(e) => setUser({ ...user, password: e.target.value })}/>
                 </td>
                 <td>
-                  <input type="text" className="form-control" value={user.firstName} placeholder="First Name" onChange={(e) => setUser({ ...user, firstName: e.firstName.value })}/>
+                  <input type="text" className="form-control" value={user.firstName} placeholder="First Name" onChange={(e) => setUser({ ...user, firstName: e.target.value })}/>
                 </td>
                 <td>
-                  <input type="text" className="form-control" value={user.lastName} placeholder="Last Name" onChange={(e) => setUser({ ...user, lastName: e.lastName.value })}/>
+                  <input type="text" className="form-control" value={user.lastName} placeholder="Last Name" onChange={(e) => setUser({ ...user, lastName: e.target.value })}/>
                 </td>
                 <td>
-                  <select className="form-select" value={user.role} onChange={(e) => setUser({ ...user, role: e.role.value })}>
+                  <select className="form-select" value={user.role} onChange={(e) => setUser({ ...user, role: e.target.value })}>
                     <option value="USER">User</option>
                     <option value="ADMIN">Admin</option>
                     <option value="FACULTY">Faculty</option>
