@@ -1,11 +1,17 @@
 import * as client from "./client.js";
 import { useState, useEffect } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, useParams } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 
 function Account() {
+  const { id } = useParams();
   const [account, setAccount] = useState(null);
   const navigate = useNavigate();
+
+  const findUserById = async (id) => {
+    const user = await client.findUserById(id);
+    setAccount(user);
+  };
 
   const fetchAccount = async () => {
     try {
@@ -23,7 +29,11 @@ function Account() {
 
 
   useEffect(() => {
-    fetchAccount();
+    if (id) {
+      findUserById(id);
+    } else {
+      fetchAccount();
+    }
   }, []);
 
   return (
