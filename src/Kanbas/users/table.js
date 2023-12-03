@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import * as client from "./client";
+import { Link } from "react-router-dom";
 import {BsFillCheckCircleFill, BsPencil, BsTrash3Fill, BsPlusCircleFill } from "react-icons/bs";
 
 function UserTable() {
