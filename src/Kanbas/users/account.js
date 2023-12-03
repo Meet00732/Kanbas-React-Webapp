@@ -45,7 +45,7 @@ function Account() {
     <div className="d-flex justify-content-center align-items-center" style={{ minHeight: "100vh" }}>
       <div className="w-100" style={{ maxWidth: "500px" }}>
         <h1 className="text-center mb-4">Account</h1>
-        {account && (
+        {(
           <form>
             <div className="mb-3">
               <label htmlFor="password" className="form-label">Password</label>
