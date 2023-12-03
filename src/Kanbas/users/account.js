@@ -68,7 +68,7 @@ function Account() {
               </select>
             </div>
             <div className="d-flex justify-content-center">
-              <button type="submit" className="btn btn-primary">
+              <button onClick={save} classname="btn btn-primary">
                 Save
               </button>
             </div>
