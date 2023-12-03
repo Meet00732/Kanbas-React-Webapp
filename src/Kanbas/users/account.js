@@ -23,6 +23,11 @@ function Account() {
     }
   };
 
+  const signout = async () => {
+    await client.signout();
+    navigate("/project/signin");
+  };
+
   const save = async () => {
     await client.updateUser(account);
   };
