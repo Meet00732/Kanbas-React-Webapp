@@ -76,9 +76,7 @@ function UserTable() {
               </tr>
               <tr>
                 <td>
-                    <Link to={`/project/account/${user._id}`}>
-                      <input type="text" className="form-control" value={user.username} placeholder="Username" onChange={(e) => setUser({ ...user, username: e.target.value })}/>
-                    </Link> 
+                    <input type="text" className="form-control" value={user.username} placeholder="Username" onChange={(e) => setUser({ ...user, username: e.target.value })}/> 
                 </td>
                 <td>
                   <input type="password" className="form-control" value={user.password} placeholder="Password" onChange={(e) => setUser({ ...user, password: e.target.value })}/>
@@ -107,7 +105,9 @@ function UserTable() {
             <tbody>
               {users.map((user) => (
                 <tr key={user._id}>
-                  <td>{user.username}</td>
+                  <Link to={`/project/account/${user._id}`}>
+                    <td>{user.username}</td>
+                  </Link>
                   <td></td>
                   <td>{user.firstName}</td>
                   <td>{user.lastName}</td>
