@@ -10,7 +10,7 @@ const Nav = () => {
         { label: "Home", path: "/home", word: "Home" },
         { label: "Search", path: "/search", word: "Search" },
         { label: "Sign In", path: "/project/signin", word: "Signin" },
-        { label: "Sign Up", path: "/signup", word: "Signup" },
+        { label: "Sign Up", path: "project/signup", word: "Signup" },
         { label: "Account", path: "/project/account", word: "Account" },
     ];
 
