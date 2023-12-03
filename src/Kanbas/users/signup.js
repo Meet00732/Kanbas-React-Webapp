@@ -18,7 +18,7 @@ function Signup() {
   };
 
   return (
-    <div className="container mt-5">
+    <div>
       <h1 className="text-center mb-4">Signup</h1>
       {error && <div className="alert alert-danger">{error}</div>}
       <div className="row justify-content-center">
