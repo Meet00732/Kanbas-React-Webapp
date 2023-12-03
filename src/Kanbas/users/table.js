@@ -75,7 +75,9 @@ function UserTable() {
               </tr>
               <tr>
                 <td>
-                  <input type="text" className="form-control" value={user.username} placeholder="Username" onChange={(e) => setUser({ ...user, username: e.target.value })}/>
+                    <Link to={`/project/account/${user._id}`}>
+                      <input type="text" className="form-control" value={user.username} placeholder="Username" onChange={(e) => setUser({ ...user, username: e.target.value })}/>
+                    </Link> 
                 </td>
                 <td>
                   <input type="password" className="form-control" value={user.password} placeholder="Password" onChange={(e) => setUser({ ...user, password: e.target.value })}/>
