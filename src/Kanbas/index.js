@@ -8,7 +8,6 @@ import store from "./store";
 import { Provider } from "react-redux";
 import axios from "axios";
 
-
 function Kanbas() {
 
   const [courses, setCourses] = useState([]);
