@@ -87,6 +87,11 @@ function Account() {
                 Save
               </button>
             </div>
+            <div className="d-flex justify-content-center">
+              <button onClick={signout} className="btn btn-danger">
+                Signout
+              </button>
+            </div>
             <div>
               <br />
             </div>
